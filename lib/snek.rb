@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "snek/tickable"
 require_relative "snek/version"
 require_relative "snek/grid"
 
