@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+require "json"
+
 module Snek::Entities
+  # Base entity class for all others to inherit from
   class Base
     attr_accessor :children, :x, :y
 
@@ -29,6 +32,20 @@ module Snek::Entities
 
     def length
       @children.length + 1
+    end
+
+    def to_json(*_args)
+      hash = {}
+      instance_variables.each do |var|
+        hash[var] = instance_variable_get var
+      end
+      hash.to_json
+    end
+
+    def from_json!(string)
+      JSON.parse(string).each do |var, val|
+        instance_variable_set var, val
+      end
     end
   end
 end
