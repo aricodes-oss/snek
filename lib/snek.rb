@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "snek/tickable"
 require_relative "snek/version"
-require_relative "snek/grid"
+require_relative "snek/entities/entities"
 
 module Snek
   class Error < StandardError; end
-  # Your code goes here...
 end
