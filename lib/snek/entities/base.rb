@@ -5,20 +5,23 @@ require "json"
 module Snek::Entities
   # Base entity class for all others to inherit from
   class Base
-    attr_accessor :children, :x, :y
+    attr_accessor :children, :position
 
     def initialize(children: [], position: [0, 0])
       @children = children
-      @x = position[0]
-      @y = position[1]
+      @position = position
     end
 
     def tick
       @children.map(&:tick)
     end
 
-    def position
-      [@x, @y]
+    def x
+      @position[0]
+    end
+
+    def y
+      @position[1]
     end
 
     def occupied_tiles
