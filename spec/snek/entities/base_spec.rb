@@ -20,6 +20,6 @@ RSpec.describe Snek::Entities::Base do
     pos = [rand(1024), rand(1024)]
     node = described_class.new(children: [described_class.new(position: pos)])
 
-    expect(node.collides?(pos)).to eq(true)
+    expect(node.collides?(pos)).to be true
   end
 end

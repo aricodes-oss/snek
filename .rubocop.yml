@@ -22,3 +22,13 @@ Metrics/BlockLength:
 
 RSpec/InstanceVariable:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+# Only temporarily while hacking
+Style/Documentation:
+  Enabled: false

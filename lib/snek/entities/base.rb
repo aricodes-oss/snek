@@ -26,5 +26,9 @@ module Snek::Entities
       occupied_tiles.include?(point)
     end
     alias_method :collides?, :include?
+
+    def length
+      @children.length + 1
+    end
   end
 end
